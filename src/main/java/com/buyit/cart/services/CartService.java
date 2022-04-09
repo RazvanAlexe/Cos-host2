@@ -30,7 +30,7 @@ public class CartService {
         this.productRepository = productRepository;
     }
 
-    public CartDTO removeProductFromCart(String productId, String cartId) {
+    public CartDTO removeProductFromCart(int productId, String cartId) {
         Optional<CartEntity> cartEntity = cartRepository.findById(cartId);
 
         if (cartEntity.isEmpty()) return null;
@@ -38,7 +38,7 @@ public class CartService {
         List<CartItemEntity> itemEntities = cartItemRepository.findByCartId(cartId);
 
         for (CartItemEntity itemEntity : itemEntities) {
-            if (itemEntity.getProductId().equals(productId)) {
+            if (itemEntity.getProductId() == productId) {
                 int quantity = itemEntity.getQuantity();
                 int prodPrice = (int) itemEntity.getPrice() / quantity;
 
@@ -57,7 +57,7 @@ public class CartService {
         return null;
     }
 
-    public CartDTO addProductInCart(String productId, String cartId) {
+    public CartDTO addProductInCart(int productId, String cartId) {
         Optional<CartEntity> cartEntity = cartRepository.findById(cartId);
 
         if (cartEntity.isEmpty()) return null;
@@ -66,7 +66,7 @@ public class CartService {
 
         boolean itemExists = false;
         for (CartItemEntity itemEntity : itemEntities) {
-            if (itemEntity.getProductId().equals(productId)) {
+            if (itemEntity.getProductId() == productId) {
                 int quantity = itemEntity.getQuantity();
                 int prodPrice = (int) itemEntity.getPrice() / quantity;
 
@@ -87,7 +87,7 @@ public class CartService {
             int size = itemEntities.size();
             itemEntity.setId("ciid" + (size + 1));
 
-            int price = productRepository.findById(productId).get().getPrice();
+            double price = productRepository.findById(Integer.toString(productId)).get().getPrice();
             itemEntity.setPrice(price);
 
             itemEntity.setQuantity(1);
@@ -115,7 +115,7 @@ public class CartService {
 
         for (CartItemEntity itemEntity : itemEntities) {
             CartItemDTO itemObject = new CartItemDTO();
-            Optional<ProductEntity> productEntity = productRepository.findById(itemEntity.getProductId());
+            Optional<ProductEntity> productEntity = productRepository.findById(Integer.toString(itemEntity.getProductId()));
 
             if (productEntity.isEmpty()) return null;
 

@@ -102,20 +102,20 @@ class CartControllerTest {
         CartItemDTO cartItemDTO = new CartItemDTO();
         cartItemDTO.setQuantity(1);
         cartItemDTO.setPrice(10);
-        cartItemDTO.setProductEntity(new ProductEntity("pid1", "name1", 10));
+        cartItemDTO.setProductEntity(new ProductEntity(1, "name1", 10, "", 0, 0, 0, 0, 0));
 
         List<CartItemDTO> cartItemDTOS = new ArrayList<>();
         cartItemDTOS.add(cartItemDTO);
 
         cartDTOExpected.setItems(cartItemDTOS);
 
-        ItemToCartDTO itemToCartDTOMock = new ItemToCartDTO("pid1", "cid1");
+        ItemToCartDTO itemToCartDTOMock = new ItemToCartDTO(1, "cid1");
 
         ObjectMapper objectMapper = new ObjectMapper();
 
         String jsonString = objectMapper.writeValueAsString(itemToCartDTOMock);
 
-        when(cartService.addProductInCart("pid1","cid1")).thenReturn(cartDTOExpected);
+        when(cartService.addProductInCart(1,"cid1")).thenReturn(cartDTOExpected);
 
         RequestBuilder requestBuilder = MockMvcRequestBuilders.post("/cart/addProduct")
                 .contentType(MediaType.APPLICATION_JSON).content(jsonString);
@@ -132,13 +132,13 @@ class CartControllerTest {
         cartDTOExpected.setItems(new ArrayList<>());
         cartDTOExpected.setTotalPrice(0);
 
-        ItemToCartDTO itemToCartDTOMock = new ItemToCartDTO("pid1", "cid1");
+        ItemToCartDTO itemToCartDTOMock = new ItemToCartDTO(1, "cid1");
 
         ObjectMapper objectMapper = new ObjectMapper();
 
         String jsonString = objectMapper.writeValueAsString(itemToCartDTOMock);
 
-        when(cartService.removeProductFromCart("pid1","cid1")).thenReturn(cartDTOExpected);
+        when(cartService.removeProductFromCart(1,"cid1")).thenReturn(cartDTOExpected);
 
         RequestBuilder requestBuilder = MockMvcRequestBuilders.delete("/cart/removeProduct")
                 .contentType(MediaType.APPLICATION_JSON).content(jsonString);

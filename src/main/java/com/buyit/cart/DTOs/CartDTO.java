@@ -11,7 +11,7 @@ import java.util.List;
 @AllArgsConstructor
 public class CartDTO {
     private List<CartItemDTO> items;
-    private int totalPrice;
+    private double totalPrice;
 
     public CartDTO() {
         items = new ArrayList<>();

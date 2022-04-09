@@ -16,5 +16,5 @@ import javax.persistence.*;
 public class CartEntity {
     @Id
     private String id;
-    private int totalPrice;
+    private double totalPrice;
 }

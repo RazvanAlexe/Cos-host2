@@ -33,7 +33,7 @@ class CartItemRepositoryTest {
 
     @Test
     void saveTest() {
-        CartItemEntity cartItemEntityExpected = new CartItemEntity("ciid1", 1, 10, "cid1", "pid1");
+        CartItemEntity cartItemEntityExpected = new CartItemEntity("ciid1", 1, 10, "cid1", 1);
         CartItemEntity cartItemEntityActual = this.cartItemRepository.save(cartItemEntityExpected);
         assertEquals(cartItemEntityExpected, cartItemEntityActual);
     }

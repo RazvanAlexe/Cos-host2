@@ -6,6 +6,6 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class ItemToCartDTO {
-    private String productId;
+    private int productId;
     private String cartId;
 }

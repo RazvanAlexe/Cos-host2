@@ -115,11 +115,11 @@ class CartServiceTest {
 
         List<CartItemEntity> itemEntityListMock = new ArrayList<>();
 
-        CartItemEntity cartItemEntityMock = new CartItemEntity("ciid1", 1, 10, "cid1", "pid1");
+        CartItemEntity cartItemEntityMock = new CartItemEntity("ciid1", 1, 10, "cid1", 1);
 
         itemEntityListMock.add(cartItemEntityMock);
 
-        ProductEntity productEntityMock = new ProductEntity("pid1", "name1", 10);
+        ProductEntity productEntityMock = new ProductEntity(1, "name1", 10, "", 0, 0, 0, 0, 0);
 
         List<CartItemDTO> cartItemDTOListExpected = new ArrayList<>();
         cartItemDTOListExpected.add(new CartItemDTO(2, 20, productEntityMock));
@@ -132,7 +132,7 @@ class CartServiceTest {
 
         CartDTO cartDTOExpected = new CartDTO(cartItemDTOListExpected, 20);
 
-        CartDTO cartDTOActual = this.cartService.addProductInCart("pid1", "cid1");
+        CartDTO cartDTOActual = this.cartService.addProductInCart(1, "cid1");
 
         assertEquals(cartDTOExpected, cartDTOActual);
     }
@@ -145,11 +145,11 @@ class CartServiceTest {
 
         List<CartItemEntity> itemEntityListMock = new ArrayList<>();
 
-        CartItemEntity cartItemEntityMock = new CartItemEntity("ciid1", 2, 20, "cid1", "pid1");
+        CartItemEntity cartItemEntityMock = new CartItemEntity("ciid1", 2, 20, "cid1", 1);
 
         itemEntityListMock.add(cartItemEntityMock);
 
-        ProductEntity productEntityMock = new ProductEntity("pid1", "name1", 10);
+        ProductEntity productEntityMock = new ProductEntity(1, "name1", 10, "", 0, 0, 0, 0, 0);
 
         List<CartItemDTO> cartItemDTOListExpected = new ArrayList<>();
         cartItemDTOListExpected.add(new CartItemDTO(1, 10, productEntityMock));
@@ -162,7 +162,7 @@ class CartServiceTest {
 
         CartDTO cartDTOExpected = new CartDTO(cartItemDTOListExpected, 10);
 
-        CartDTO cartDTOActual = this.cartService.removeProductFromCart("pid1", "cid1");
+        CartDTO cartDTOActual = this.cartService.removeProductFromCart(1, "cid1");
 
         assertEquals(cartDTOExpected, cartDTOActual);
     }

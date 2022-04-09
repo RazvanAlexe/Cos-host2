@@ -13,7 +13,13 @@ import javax.persistence.*;
 @NoArgsConstructor
 public class ProductEntity {
     @Id
-    private String id;
-    private String name;
-    private int price;
+    private int id;
+    private String title;
+    private double price;
+    private String description;
+    private int authorid;
+    private double rating;
+    private int categoryid;
+    private int unitssold;
+    private int availableunits;
 }

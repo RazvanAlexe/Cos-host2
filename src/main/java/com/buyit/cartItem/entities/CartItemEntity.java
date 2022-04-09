@@ -17,5 +17,5 @@ public class CartItemEntity {
     private int quantity;
     private double price;
     private String cartId;
-    private String productId;
+    private int productId;
 }
