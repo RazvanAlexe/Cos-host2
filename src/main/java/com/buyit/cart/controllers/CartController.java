@@ -14,7 +14,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping(path = "cart")
+@RequestMapping(path = "/auth/cart")
 public class CartController {
 
     private final CartService cartService;

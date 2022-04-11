@@ -7,10 +7,11 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "shipping_addresses")
+@Table(name = "ShippingAdress")
 @Data
 public class ShippingAddressEntity {
     @Id
     private String id;
+    private String city;
     private String address;
 }
