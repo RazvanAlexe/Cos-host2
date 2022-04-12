@@ -14,7 +14,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping(path = "/auth/cart")
+@RequestMapping(path = "/cart")
 public class CartController {
 
     private final CartService cartService;
@@ -24,7 +24,7 @@ public class CartController {
         this.cartService = cartService;
     }
 
-    @PostMapping("/add")
+    @PostMapping("/addCart")
     @ResponseStatus(HttpStatus.CREATED)
     @Operation(
             summary = "Adds new cart",
@@ -44,7 +44,7 @@ public class CartController {
         return this.cartService.addNewCart();
     }
 
-    @GetMapping("/get/{id}")
+    @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
     @Operation(
             summary = "Gets products from a cart identified by an id",
@@ -91,7 +91,7 @@ public class CartController {
         return cartService.addProductInCart(itemToCartDTO.getProductId(), itemToCartDTO.getCartId());
     }
 
-    @DeleteMapping("/removeProduct")
+    @DeleteMapping("")
     @ResponseStatus(HttpStatus.GONE)
     @Operation(
             summary = "Removes a product from the cart",

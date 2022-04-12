@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "/auth/orders")
+@RequestMapping(path = "/cart/orders")
 public class OrderController {
     private final OrderService orderService;
 
@@ -26,7 +26,7 @@ public class OrderController {
         this.orderService = orderService;
     }
 
-    @PostMapping("/makeOrder")
+    @PostMapping("")
     @Operation(
             summary = "Make a new order",
             description = "Creates a new order and adds it to the list of orders ",
@@ -45,7 +45,7 @@ public class OrderController {
         return this.orderService.makeNewOrder(createOrderDTO);
     }
 
-    @GetMapping("/get/{id}")
+    @GetMapping("/{id}")
     @Operation(
             summary = "Gets the order identified by an id",
             description = "Searches for a order identified by the id param. It returns the requested order",
