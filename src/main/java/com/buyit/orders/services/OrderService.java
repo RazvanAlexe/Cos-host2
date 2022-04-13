@@ -82,8 +82,8 @@ public class OrderService {
                 return null;
             }
 
-            ShippingAddressDTO shippingAddressDTO = new ShippingAddressDTO(shippingAddressEntity.get().getAddress());
-            BillingAddressDTO billingAddressDTO = new BillingAddressDTO(billingAddressEntity.get().getAddress());
+            ShippingAddressDTO shippingAddressDTO = new ShippingAddressDTO(shippingAddressEntity.get().getCity(),shippingAddressEntity.get().getAddress());
+            BillingAddressDTO billingAddressDTO = new BillingAddressDTO(billingAddressEntity.get().getCity(),billingAddressEntity.get().getAddress());
             CustomerDTO userDTO = new CustomerDTO(userEntity.get().getName());
 
             orderDTO.setCartDTO(cartDTO);

@@ -1,8 +1,11 @@
 package com.buyit.product.repositories;
 
+import com.buyit.orders.entities.OrderEntity;
 import com.buyit.product.entities.ProductEntity;
 import org.springframework.data.repository.CrudRepository;
 
-public interface ProductRepository extends CrudRepository<ProductEntity, String> {
+import java.util.List;
 
+public interface ProductRepository extends CrudRepository<ProductEntity, String> {
+    List<ProductEntity> findById(int productId);
 }
