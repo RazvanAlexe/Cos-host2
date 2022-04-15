@@ -67,7 +67,7 @@ public class CartController {
                     @ApiResponse(description = "Internal error", responseCode = "500", content = @Content)
             }
     )
-    public CartDTO getCartById(@PathVariable String id) {
+    public CartDTO getCartById(@PathVariable int id) {
         return cartService.getCartById(id);
     }
 
@@ -91,7 +91,7 @@ public class CartController {
         return cartService.addProductInCart(itemToCartDTO.getProductId(), itemToCartDTO.getCartId());
     }
 
-    @DeleteMapping("")
+    @DeleteMapping("/removeProduct")
     @ResponseStatus(HttpStatus.GONE)
     @Operation(
             summary = "Removes a product from the cart",

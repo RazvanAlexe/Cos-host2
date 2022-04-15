@@ -13,9 +13,9 @@ import javax.persistence.*;
 @NoArgsConstructor
 public class CartItemEntity {
     @Id
-    private String id;
+    private int id;
     private int quantity;
     private double price;
-    private String cartId;
+    private int cartId;
     private int productId;
 }

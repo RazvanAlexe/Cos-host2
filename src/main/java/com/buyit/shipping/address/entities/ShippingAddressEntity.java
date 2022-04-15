@@ -11,7 +11,7 @@ import javax.persistence.Table;
 @Data
 public class ShippingAddressEntity {
     @Id
-    private String id;
+    private int id;
     private String city;
     private String Address;
 }

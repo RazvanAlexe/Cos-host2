@@ -1,11 +1,11 @@
 package com.buyit.cart.repositories;
 
 import com.buyit.cart.entities.CartEntity;
+import com.buyit.orders.repositories.repositories.CartRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +22,7 @@ class CartRepositoryTest {
     @Test
     public void saveValidTest() {
         CartEntity cartEntityExpected = new CartEntity();
-        cartEntityExpected.setId("cid1");
+        cartEntityExpected.setId(1);
         cartEntityExpected.setTotalPrice(0);
 
         CartEntity cartEntityResult = this.cartRepository.save(cartEntityExpected);
@@ -33,7 +33,7 @@ class CartRepositoryTest {
     @Test
     public void findAllValidTest() {
         List<CartEntity> cartEntityListExpected = new ArrayList<>();
-        cartEntityListExpected.add(new CartEntity("cid1", 0));
+        cartEntityListExpected.add(new CartEntity(1, 0));
 
         List<CartEntity> cartEntityListActual = this.cartRepository.findAll();
 
@@ -52,8 +52,8 @@ class CartRepositoryTest {
 
     @Test
     public void findByIdValidTest() {
-        CartEntity cartEntityExpected = new CartEntity("cid1", 0);
-        Optional<CartEntity> cartEntityActual = this.cartRepository.findById("cid1");
+        CartEntity cartEntityExpected = new CartEntity(1, 0);
+        Optional<CartEntity> cartEntityActual = this.cartRepository.findById(1);
         if (cartEntityActual.isPresent())
             assertEquals(cartEntityExpected, cartEntityActual.get());
         else
@@ -62,8 +62,8 @@ class CartRepositoryTest {
 
     @Test
     public void findByIdInvalidTest() {
-        CartEntity cartEntityExpected = new CartEntity("cid9", 0);
-        Optional<CartEntity> cartEntityActual = this.cartRepository.findById("cid9");
+        CartEntity cartEntityExpected = new CartEntity(9, 0);
+        Optional<CartEntity> cartEntityActual = this.cartRepository.findById(9);
         if (cartEntityActual.isPresent())
             assertEquals(cartEntityExpected, cartEntityActual.get());
         else

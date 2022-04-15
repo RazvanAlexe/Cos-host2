@@ -15,9 +15,9 @@ import javax.persistence.Table;
 @NoArgsConstructor
 public class OrderEntity {
     @Id
-    private String id;
-    private String cartId;
-    private String customerId;
-    private String shippingAddressId;
-    private String billingAddressId;
+    private int id;
+    private int cartId;
+    private int customerId;
+    private int shippingAddressId;
+    private int billingAddressId;
 }

@@ -20,20 +20,20 @@ class CartItemRepositoryTest {
     @Test
     void findByCartIdValidTest() {
         List<CartItemEntity> cartItemEntityListExpected = new ArrayList<>();
-        List<CartItemEntity> cartItemEntityListActual = this.cartItemRepository.findByCartId("cid2");
+        List<CartItemEntity> cartItemEntityListActual = this.cartItemRepository.findByCartId(2);
         assertEquals(cartItemEntityListExpected, cartItemEntityListActual);
     }
 
     @Test
     void findByCartIdInvalidTest() {
         List<CartItemEntity> cartItemEntityListExpected = new ArrayList<>();
-        List<CartItemEntity> cartItemEntityListActual = this.cartItemRepository.findByCartId("cid1");
+        List<CartItemEntity> cartItemEntityListActual = this.cartItemRepository.findByCartId(1);
         assertEquals(cartItemEntityListExpected, cartItemEntityListActual);
     }
 
     @Test
     void saveTest() {
-        CartItemEntity cartItemEntityExpected = new CartItemEntity("ciid1", 1, 10, "cid1", 1);
+        CartItemEntity cartItemEntityExpected = new CartItemEntity(1, 1, 10, 1, 1);
         CartItemEntity cartItemEntityActual = this.cartItemRepository.save(cartItemEntityExpected);
         assertEquals(cartItemEntityExpected, cartItemEntityActual);
     }

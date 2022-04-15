@@ -1,11 +1,11 @@
-package com.buyit.cart.repositories;
+package com.buyit.orders.repositories.repositories;
 
 import com.buyit.cart.entities.CartEntity;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 
-public interface CartRepository extends CrudRepository<CartEntity, String> {
+public interface CartRepository extends CrudRepository<CartEntity, Integer> {
     List<CartEntity> findAll();
 
 }

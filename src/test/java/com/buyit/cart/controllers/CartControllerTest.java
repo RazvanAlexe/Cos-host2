@@ -37,7 +37,7 @@ class CartControllerTest {
     @Test
     void addNewCartValidTest() throws Exception {
         CartEntity cartEntityExpected = new CartEntity();
-        cartEntityExpected.setId("cid1");
+        cartEntityExpected.setId(1);
         cartEntityExpected.setTotalPrice(0);
 
         when(cartService.addNewCart()).thenReturn(cartEntityExpected);
@@ -53,7 +53,7 @@ class CartControllerTest {
     @Test
     void addNewCartInvalidTest() throws Exception {
         CartEntity cartEntityExpected = new CartEntity();
-        cartEntityExpected.setId("cid1");
+        cartEntityExpected.setId(1);
         cartEntityExpected.setTotalPrice(0);
 
         when(cartService.addNewCart()).thenReturn(cartEntityExpected);
@@ -70,9 +70,9 @@ class CartControllerTest {
     void getCartByIdValidTest() throws Exception {
         CartDTO cartDTOExpected = new CartDTO(new ArrayList<>(), 0);
 
-        when(cartService.getCartById("cid1")).thenReturn(cartDTOExpected);
+        when(cartService.getCartById(1)).thenReturn(cartDTOExpected);
 
-        RequestBuilder requestBuilder = MockMvcRequestBuilders.get("/cart/get/{id}", "cid1");
+        RequestBuilder requestBuilder = MockMvcRequestBuilders.get("/cart/get/{id}", 1);
         MvcResult mvcResult = mockMvc.perform(requestBuilder).andReturn();
         String stringResult = mvcResult.getResponse().getContentAsString();
         CartDTO cartDTOActual = new ObjectMapper().readValue(stringResult, CartDTO.class);
@@ -84,9 +84,9 @@ class CartControllerTest {
     void getCartByIdInvalidTest() throws Exception {
         CartDTO cartDTOExpected = new CartDTO(new ArrayList<>(), 0);
 
-        when(cartService.getCartById("cid1")).thenReturn(cartDTOExpected);
+        when(cartService.getCartById(1)).thenReturn(cartDTOExpected);
 
-        RequestBuilder requestBuilder = MockMvcRequestBuilders.get("/cart/gett/{id}", "cid1");
+        RequestBuilder requestBuilder = MockMvcRequestBuilders.get("/cart/gett/{id}", 1);
         MvcResult mvcResult = mockMvc.perform(requestBuilder).andReturn();
         String stringResult = mvcResult.getResponse().getContentAsString();
         CartDTO cartDTOActual = new ObjectMapper().readValue(stringResult, CartDTO.class);
@@ -109,13 +109,13 @@ class CartControllerTest {
 
         cartDTOExpected.setItems(cartItemDTOS);
 
-        ItemToCartDTO itemToCartDTOMock = new ItemToCartDTO(1, "cid1");
+        ItemToCartDTO itemToCartDTOMock = new ItemToCartDTO(1, 1);
 
         ObjectMapper objectMapper = new ObjectMapper();
 
         String jsonString = objectMapper.writeValueAsString(itemToCartDTOMock);
 
-        when(cartService.addProductInCart(1,"cid1")).thenReturn(cartDTOExpected);
+        when(cartService.addProductInCart(1,1)).thenReturn(cartDTOExpected);
 
         RequestBuilder requestBuilder = MockMvcRequestBuilders.post("/cart/addProduct")
                 .contentType(MediaType.APPLICATION_JSON).content(jsonString);
@@ -132,13 +132,13 @@ class CartControllerTest {
         cartDTOExpected.setItems(new ArrayList<>());
         cartDTOExpected.setTotalPrice(0);
 
-        ItemToCartDTO itemToCartDTOMock = new ItemToCartDTO(1, "cid1");
+        ItemToCartDTO itemToCartDTOMock = new ItemToCartDTO(1, 1);
 
         ObjectMapper objectMapper = new ObjectMapper();
 
         String jsonString = objectMapper.writeValueAsString(itemToCartDTOMock);
 
-        when(cartService.removeProductFromCart(1,"cid1")).thenReturn(cartDTOExpected);
+        when(cartService.removeProductFromCart(1,1)).thenReturn(cartDTOExpected);
 
         RequestBuilder requestBuilder = MockMvcRequestBuilders.delete("/cart/removeProduct")
                 .contentType(MediaType.APPLICATION_JSON).content(jsonString);

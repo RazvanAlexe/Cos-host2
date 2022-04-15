@@ -2,11 +2,10 @@ package com.buyit.cart.services;
 
 import com.buyit.cart.DTOs.CartDTO;
 import com.buyit.cart.entities.CartEntity;
-import com.buyit.cart.repositories.CartRepository;
+import com.buyit.orders.repositories.repositories.CartRepository;
 import com.buyit.cartItem.entities.CartItemEntity;
 import com.buyit.cartItem.DTOs.CartItemDTO;
 import com.buyit.cartItem.repositories.CartItemRepository;
-import com.buyit.orders.repositories.OrderRepository;
 import com.buyit.product.entities.ProductEntity;
 import com.buyit.product.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +29,7 @@ public class CartService {
         this.productRepository = productRepository;
     }
 
-    public CartDTO removeProductFromCart(int productId, String cartId) {
+    public CartDTO removeProductFromCart(int productId, int cartId) {
         Optional<CartEntity> cartEntity = cartRepository.findById(cartId);
 
         if (cartEntity.isEmpty()) return null;
@@ -57,12 +56,17 @@ public class CartService {
         return null;
     }
 
-    public CartDTO addProductInCart(int productId, String cartId) {
+    public CartDTO addProductInCart(int productId, int cartId) {
+
+        System.out.println("bau" + productId);
+
         Optional<CartEntity> cartEntity = cartRepository.findById(cartId);
 
         if (cartEntity.isEmpty()) return null;
 
         List<CartItemEntity> itemEntities = cartItemRepository.findByCartId(cartId);
+
+        System.out.println("baubau");
 
         boolean itemExists = false;
         for (CartItemEntity itemEntity : itemEntities) {
@@ -85,9 +89,9 @@ public class CartService {
             CartItemEntity itemEntity = new CartItemEntity();
 
             int size = itemEntities.size();
-            itemEntity.setId("ciid" + (size + 1));
+            itemEntity.setId(size + 1);
 
-            double price = productRepository.findById(Integer.toString(productId)).get().getPrice();
+            double price = productRepository.findById(productId).get().getPrice();
             itemEntity.setPrice(price);
 
             itemEntity.setQuantity(1);
@@ -102,7 +106,7 @@ public class CartService {
         return getCartById(cartId);
     }
 
-    public CartDTO getCartById(String cartId) {
+    public CartDTO getCartById(int cartId) {
         Optional<CartEntity> cartEntity = cartRepository.findById(cartId);
 
         if (cartEntity.isEmpty()) return null;
@@ -115,7 +119,7 @@ public class CartService {
 
         for (CartItemEntity itemEntity : itemEntities) {
             CartItemDTO itemObject = new CartItemDTO();
-            Optional<ProductEntity> productEntity = productRepository.findById(Integer.toString(itemEntity.getProductId()));
+            Optional<ProductEntity> productEntity = productRepository.findById(itemEntity.getProductId());
 
             if (productEntity.isEmpty()) return null;
 
@@ -132,7 +136,7 @@ public class CartService {
         List<CartEntity> cartEntities = this.cartRepository.findAll();
         int size = cartEntities.size() + 1;
         CartEntity cartEntity = new CartEntity();
-        cartEntity.setId("cid" + size);
+        cartEntity.setId(size);
         cartEntity.setTotalPrice(0);
         return this.cartRepository.save(cartEntity);
     }

@@ -6,6 +6,6 @@ import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 
-public interface ProductRepository extends CrudRepository<ProductEntity, String> {
-    List<ProductEntity> findById(int productId);
+public interface ProductRepository extends CrudRepository<ProductEntity, Integer> {
+
 }

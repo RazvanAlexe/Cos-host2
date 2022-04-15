@@ -15,6 +15,6 @@ import javax.persistence.*;
 @NoArgsConstructor
 public class CartEntity {
     @Id
-    private String id;
+    private int id;
     private double totalPrice;
 }

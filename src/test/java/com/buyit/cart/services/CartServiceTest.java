@@ -2,7 +2,7 @@ package com.buyit.cart.services;
 
 import com.buyit.cart.DTOs.CartDTO;
 import com.buyit.cart.entities.CartEntity;
-import com.buyit.cart.repositories.CartRepository;
+import com.buyit.orders.repositories.repositories.CartRepository;
 import com.buyit.cartItem.DTOs.CartItemDTO;
 import com.buyit.cartItem.entities.CartItemEntity;
 import com.buyit.cartItem.repositories.CartItemRepository;
@@ -40,11 +40,11 @@ class CartServiceTest {
     @Test
     void addNewCartValidTest() {
         List<CartEntity> cartEntityListMock = new ArrayList<>();
-        cartEntityListMock.add(new CartEntity("cid1", 0));
+        cartEntityListMock.add(new CartEntity(1, 0));
         int size = cartEntityListMock.size() + 1;
 
         CartEntity cartEntityExpected = new CartEntity();
-        cartEntityExpected.setId("cid" + size);
+        cartEntityExpected.setId(size);
         cartEntityExpected.setTotalPrice(0);
 
         Mockito.when(cartRepository.save(cartEntityExpected)).thenReturn(cartEntityExpected);
@@ -58,11 +58,11 @@ class CartServiceTest {
     @Test
     void addNewCartInvalidTest() {
         List<CartEntity> cartEntityListMock = new ArrayList<>();
-        cartEntityListMock.add(new CartEntity("cid1", 0));
+        cartEntityListMock.add(new CartEntity(1, 0));
         int size = cartEntityListMock.size() + 1;
 
         CartEntity cartEntityExpected = new CartEntity();
-        cartEntityExpected.setId("cid" + size);
+        cartEntityExpected.setId(size);
         cartEntityExpected.setTotalPrice(10);
 
         Mockito.when(cartRepository.save(cartEntityExpected)).thenReturn(cartEntityExpected);
@@ -75,16 +75,16 @@ class CartServiceTest {
 
     @Test
     void getCartByIdValidTest() {
-        CartEntity cartEntityMock = new CartEntity("cid1", 0);
+        CartEntity cartEntityMock = new CartEntity(1, 0);
         List<CartItemEntity> cartItemEntityListMock = new ArrayList<>();
         ProductEntity productEntityMock = new ProductEntity();
 
         CartDTO cartDTOExpected = new CartDTO(new ArrayList<>(), 0);
-        Mockito.when(cartRepository.findById("cid1")).thenReturn(Optional.of(cartEntityMock));
-        Mockito.when(cartItemRepository.findByCartId("cid1")).thenReturn(cartItemEntityListMock);
-        Mockito.when(productRepository.findById("cid1")).thenReturn(Optional.of(productEntityMock));
+        Mockito.when(cartRepository.findById(1)).thenReturn(Optional.of(cartEntityMock));
+        Mockito.when(cartItemRepository.findByCartId(1)).thenReturn(cartItemEntityListMock);
+        Mockito.when(productRepository.findById(1)).thenReturn(Optional.of(productEntityMock));
 
-        CartDTO cartDTOActual = this.cartService.getCartById("cid1");
+        CartDTO cartDTOActual = this.cartService.getCartById(1);
 
         assertEquals(cartDTOExpected, cartDTOActual);
 
@@ -92,16 +92,16 @@ class CartServiceTest {
 
     @Test
     void getCartByIdInvalidTest() {
-        CartEntity cartEntityMock = new CartEntity("cid1", 10);
+        CartEntity cartEntityMock = new CartEntity(1, 10);
         List<CartItemEntity> cartItemEntityListMock = new ArrayList<>();
         ProductEntity productEntityMock = new ProductEntity();
 
         CartDTO cartDTOExpected = new CartDTO(new ArrayList<>(), 0);
-        Mockito.when(cartRepository.findById("cid1")).thenReturn(Optional.of(cartEntityMock));
-        Mockito.when(cartItemRepository.findByCartId("cid1")).thenReturn(cartItemEntityListMock);
-        Mockito.when(productRepository.findById("cid1")).thenReturn(Optional.of(productEntityMock));
+        Mockito.when(cartRepository.findById(1)).thenReturn(Optional.of(cartEntityMock));
+        Mockito.when(cartItemRepository.findByCartId(1)).thenReturn(cartItemEntityListMock);
+        Mockito.when(productRepository.findById(1)).thenReturn(Optional.of(productEntityMock));
 
-        CartDTO cartDTOActual = this.cartService.getCartById("cid1");
+        CartDTO cartDTOActual = this.cartService.getCartById(1);
 
         assertEquals(cartDTOExpected, cartDTOActual);
 
@@ -110,12 +110,12 @@ class CartServiceTest {
     @Test
     void addProductInCartTest() {
         CartEntity cartEntityMock = new CartEntity();
-        cartEntityMock.setId("cid1");
+        cartEntityMock.setId(1);
         cartEntityMock.setTotalPrice(10);
 
         List<CartItemEntity> itemEntityListMock = new ArrayList<>();
 
-        CartItemEntity cartItemEntityMock = new CartItemEntity("ciid1", 1, 10, "cid1", 1);
+        CartItemEntity cartItemEntityMock = new CartItemEntity(1, 1, 10, 1, 1);
 
         itemEntityListMock.add(cartItemEntityMock);
 
@@ -124,15 +124,15 @@ class CartServiceTest {
         List<CartItemDTO> cartItemDTOListExpected = new ArrayList<>();
         cartItemDTOListExpected.add(new CartItemDTO(2, 20, productEntityMock));
 
-        Mockito.when(cartRepository.findById("cid1")).thenReturn(Optional.of(cartEntityMock));
-        Mockito.when(cartItemRepository.findByCartId("cid1")).thenReturn(itemEntityListMock);
+        Mockito.when(cartRepository.findById(1)).thenReturn(Optional.of(cartEntityMock));
+        Mockito.when(cartItemRepository.findByCartId(1)).thenReturn(itemEntityListMock);
         Mockito.when(cartItemRepository.save(cartItemEntityMock)).thenReturn(cartItemEntityMock);
         Mockito.when(cartRepository.save(cartEntityMock)).thenReturn(cartEntityMock);
-        Mockito.when(productRepository.findById("pid1")).thenReturn(Optional.of(productEntityMock));
+        Mockito.when(productRepository.findById(1)).thenReturn(Optional.of(productEntityMock));
 
         CartDTO cartDTOExpected = new CartDTO(cartItemDTOListExpected, 20);
 
-        CartDTO cartDTOActual = this.cartService.addProductInCart(1, "cid1");
+        CartDTO cartDTOActual = this.cartService.addProductInCart(1, 1);
 
         assertEquals(cartDTOExpected, cartDTOActual);
     }
@@ -140,29 +140,29 @@ class CartServiceTest {
     @Test
     void removeProductFromCartTest() {
         CartEntity cartEntityMock = new CartEntity();
-        cartEntityMock.setId("cid1");
+        cartEntityMock.setId(1);
         cartEntityMock.setTotalPrice(20);
 
         List<CartItemEntity> itemEntityListMock = new ArrayList<>();
 
-        CartItemEntity cartItemEntityMock = new CartItemEntity("ciid1", 2, 20, "cid1", 1);
+        CartItemEntity cartItemEntityMock = new CartItemEntity(1, 2, 20, 1, 1);
 
         itemEntityListMock.add(cartItemEntityMock);
 
-        ProductEntity productEntityMock = new ProductEntity(1, "name1", 10, "", 0, 0, 0, 0, 0);
+        ProductEntity productEntityMock = new ProductEntity(1, "name1", 10, "", 0, 0, 0, 0, 1);
 
         List<CartItemDTO> cartItemDTOListExpected = new ArrayList<>();
         cartItemDTOListExpected.add(new CartItemDTO(1, 10, productEntityMock));
 
-        Mockito.when(cartRepository.findById("cid1")).thenReturn(Optional.of(cartEntityMock));
-        Mockito.when(cartItemRepository.findByCartId("cid1")).thenReturn(itemEntityListMock);
+        Mockito.when(cartRepository.findById(1)).thenReturn(Optional.of(cartEntityMock));
+        Mockito.when(cartItemRepository.findByCartId(1)).thenReturn(itemEntityListMock);
         Mockito.when(cartItemRepository.save(cartItemEntityMock)).thenReturn(cartItemEntityMock);
         Mockito.when(cartRepository.save(cartEntityMock)).thenReturn(cartEntityMock);
-        Mockito.when(productRepository.findById("pid1")).thenReturn(Optional.of(productEntityMock));
+        Mockito.when(productRepository.findById(1)).thenReturn(Optional.of(productEntityMock));
 
         CartDTO cartDTOExpected = new CartDTO(cartItemDTOListExpected, 10);
 
-        CartDTO cartDTOActual = this.cartService.removeProductFromCart(1, "cid1");
+        CartDTO cartDTOActual = this.cartService.removeProductFromCart(1, 1);
 
         assertEquals(cartDTOExpected, cartDTOActual);
     }

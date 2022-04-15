@@ -6,8 +6,8 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class CreateOrderDTO {
-    private String cartId;
-    private String customerId;
-    private String shippingAddressId;
-    private String billingAddressId;
+    private int cartId;
+    private int customerId;
+    private int shippingAddressId;
+    private int billingAddressId;
 }

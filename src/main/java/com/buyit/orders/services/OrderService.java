@@ -49,7 +49,7 @@ public class OrderService {
         List<OrderEntity> orderEntityList = this.orderRepository.findAll();
         int size = orderEntityList.size() + 1;
 
-        orderEntity.setId("oid" + size);
+        orderEntity.setId(size);
         orderEntity.setCartId(createOrderDTO.getCartId());
         orderEntity.setCustomerId(createOrderDTO.getCustomerId());
         orderEntity.setShippingAddressId(createOrderDTO.getShippingAddressId());
@@ -58,7 +58,7 @@ public class OrderService {
         return this.orderRepository.save(orderEntity);
     }
 
-    public List<OrderDTO> getOrdersByUserId(String id) {
+    public List<OrderDTO> getOrdersByUserId(int id) {
         List<OrderEntity> orderEntityList = this.orderRepository.findByCustomerId(id);
         List<OrderDTO> orderDTOList = new ArrayList<>();
 
@@ -84,7 +84,7 @@ public class OrderService {
 
             ShippingAddressDTO shippingAddressDTO = new ShippingAddressDTO(shippingAddressEntity.get().getCity(),shippingAddressEntity.get().getAddress());
             BillingAddressDTO billingAddressDTO = new BillingAddressDTO(billingAddressEntity.get().getCity(),billingAddressEntity.get().getAddress());
-            CustomerDTO userDTO = new CustomerDTO(userEntity.get().getName());
+            CustomerDTO userDTO = new CustomerDTO(userEntity.get().getUsername(), userEntity.get().getFirstname(), userEntity.get().getLastname());
 
             orderDTO.setCartDTO(cartDTO);
             orderDTO.setUserDTO(userDTO);

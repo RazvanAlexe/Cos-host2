@@ -67,7 +67,7 @@ public class OrderController {
                     @ApiResponse(description = "Internal error", responseCode = "500", content = @Content)
             }
     )
-    public List<OrderDTO> getOrdersByUserId(@PathVariable String id){
+    public List<OrderDTO> getOrdersByUserId(@PathVariable int id){
         return this.orderService.getOrdersByUserId(id);
     }
 }
