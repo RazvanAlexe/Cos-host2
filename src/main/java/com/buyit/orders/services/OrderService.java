@@ -29,37 +29,51 @@ public class OrderService {
     private final BillingAddressRepository billingAddressRepository;
     private final CustomerRepository userRepository;
     private final CartService cartService;
+    private final CustomerRepository customerRepository;
 
     @Autowired
     public OrderService(OrderRepository orderRepository,
                         ShippingAddressRepository shippingAddressRepository,
                         BillingAddressRepository billingAddressRepository,
                         CustomerRepository userRepository,
-                        CartService cartService) {
+                        CartService cartService,
+                        CustomerRepository customerRepository) {
         this.orderRepository = orderRepository;
         this.shippingAddressRepository = shippingAddressRepository;
         this.billingAddressRepository = billingAddressRepository;
         this.userRepository = userRepository;
         this.cartService = cartService;
+        this.customerRepository = customerRepository;
     }
 
-    public OrderEntity makeNewOrder(CreateOrderDTO createOrderDTO) {
+    public OrderEntity makeNewOrder(String username, CreateOrderDTO createOrderDTO) {
+
+        CustomerEntity customerEntity = this.customerRepository.findByUsername(username);
+
+        int userId = customerEntity.getId();
+        int cartId = customerEntity.getCartId();
+
         OrderEntity orderEntity = new OrderEntity();
 
         List<OrderEntity> orderEntityList = this.orderRepository.findAll();
         int size = orderEntityList.size() + 1;
 
         orderEntity.setId(size);
-        orderEntity.setCartId(createOrderDTO.getCartId());
-        orderEntity.setCustomerId(createOrderDTO.getCustomerId());
+        orderEntity.setCartId(cartId);
+        orderEntity.setCustomerId(userId);
         orderEntity.setShippingAddressId(createOrderDTO.getShippingAddressId());
         orderEntity.setBillingAddressId(createOrderDTO.getBillingAddressId());
 
         return this.orderRepository.save(orderEntity);
     }
 
-    public List<OrderDTO> getOrdersByUserId(int id) {
-        List<OrderEntity> orderEntityList = this.orderRepository.findByCustomerId(id);
+    public List<OrderDTO> getOrdersByUsername(String username) {
+
+        CustomerEntity customerEntity = this.customerRepository.findByUsername(username);
+
+        int userId = customerEntity.getId();
+
+        List<OrderEntity> orderEntityList = this.orderRepository.findByCustomerId(userId);
         List<OrderDTO> orderDTOList = new ArrayList<>();
 
         for (OrderEntity orderEntity : orderEntityList) {
@@ -82,8 +96,8 @@ public class OrderService {
                 return null;
             }
 
-            ShippingAddressDTO shippingAddressDTO = new ShippingAddressDTO(shippingAddressEntity.get().getCity(),shippingAddressEntity.get().getAddress());
-            BillingAddressDTO billingAddressDTO = new BillingAddressDTO(billingAddressEntity.get().getCity(),billingAddressEntity.get().getAddress());
+            ShippingAddressDTO shippingAddressDTO = new ShippingAddressDTO(shippingAddressEntity.get().getCity(), shippingAddressEntity.get().getAddress());
+            BillingAddressDTO billingAddressDTO = new BillingAddressDTO(billingAddressEntity.get().getCity(), billingAddressEntity.get().getAddress());
             CustomerDTO userDTO = new CustomerDTO(userEntity.get().getUsername(), userEntity.get().getFirstname(), userEntity.get().getLastname());
 
             orderDTO.setCartDTO(cartDTO);

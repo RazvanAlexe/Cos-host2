@@ -4,4 +4,5 @@ import com.buyit.customer.entities.CustomerEntity;
 import org.springframework.data.repository.CrudRepository;
 
 public interface CustomerRepository extends CrudRepository<CustomerEntity, Integer> {
+    CustomerEntity findByUsername(String username);
 }

@@ -1,7 +1,6 @@
 package com.buyit.orders.controllers;
 
-import com.buyit.cart.DTOs.CartDTO;
-import com.buyit.cart.entities.CartEntity;
+import com.buyit.auth.AuthService;
 import com.buyit.orders.entities.OrderEntity;
 import com.buyit.orders.DTOs.CreateOrderDTO;
 import com.buyit.orders.DTOs.OrderDTO;
@@ -20,10 +19,13 @@ import java.util.List;
 @RequestMapping(path = "/cart/orders")
 public class OrderController {
     private final OrderService orderService;
+    private final AuthService authService;
 
     @Autowired
-    public OrderController(OrderService orderService) {
+    public OrderController(OrderService orderService,
+                           AuthService authService) {
         this.orderService = orderService;
+        this.authService = authService;
     }
 
     @PostMapping("")
@@ -41,8 +43,9 @@ public class OrderController {
                     @ApiResponse(description = "Internal error", responseCode = "500", content = @Content)
             }
     )
-    public OrderEntity makeNewOrder(@RequestBody CreateOrderDTO createOrderDTO){
-        return this.orderService.makeNewOrder(createOrderDTO);
+    public OrderEntity makeNewOrder(@RequestHeader("Authorization") String requestTokenHeader, @RequestBody CreateOrderDTO createOrderDTO) {
+        String username = this.authService.getUsernameFromRequestTokenHeader(requestTokenHeader);
+        return this.orderService.makeNewOrder(username, createOrderDTO);
     }
 
     @GetMapping("/{id}")
@@ -67,7 +70,8 @@ public class OrderController {
                     @ApiResponse(description = "Internal error", responseCode = "500", content = @Content)
             }
     )
-    public List<OrderDTO> getOrdersByUserId(@PathVariable int id){
-        return this.orderService.getOrdersByUserId(id);
+    public List<OrderDTO> getOrdersByUsername(@RequestHeader("Authorization") String requestTokenHeader) {
+        String username = this.authService.getUsernameFromRequestTokenHeader(requestTokenHeader);
+        return this.orderService.getOrdersByUsername(username);
     }
 }

@@ -109,13 +109,13 @@ class CartControllerTest {
 
         cartDTOExpected.setItems(cartItemDTOS);
 
-        ItemToCartDTO itemToCartDTOMock = new ItemToCartDTO(1, 1);
+        ItemToCartDTO itemToCartDTOMock = new ItemToCartDTO(1);
 
         ObjectMapper objectMapper = new ObjectMapper();
 
         String jsonString = objectMapper.writeValueAsString(itemToCartDTOMock);
 
-        when(cartService.addProductInCart(1,1)).thenReturn(cartDTOExpected);
+        when(cartService.addProductInCart(1,"usr1")).thenReturn(cartDTOExpected);
 
         RequestBuilder requestBuilder = MockMvcRequestBuilders.post("/cart/addProduct")
                 .contentType(MediaType.APPLICATION_JSON).content(jsonString);
@@ -132,13 +132,13 @@ class CartControllerTest {
         cartDTOExpected.setItems(new ArrayList<>());
         cartDTOExpected.setTotalPrice(0);
 
-        ItemToCartDTO itemToCartDTOMock = new ItemToCartDTO(1, 1);
+        ItemToCartDTO itemToCartDTOMock = new ItemToCartDTO(1);
 
         ObjectMapper objectMapper = new ObjectMapper();
 
         String jsonString = objectMapper.writeValueAsString(itemToCartDTOMock);
 
-        when(cartService.removeProductFromCart(1,1)).thenReturn(cartDTOExpected);
+        when(cartService.removeProductFromCart(1,"usr1")).thenReturn(cartDTOExpected);
 
         RequestBuilder requestBuilder = MockMvcRequestBuilders.delete("/cart/removeProduct")
                 .contentType(MediaType.APPLICATION_JSON).content(jsonString);

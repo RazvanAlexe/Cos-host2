@@ -7,5 +7,4 @@ import lombok.Data;
 @AllArgsConstructor
 public class ItemToCartDTO {
     private int productId;
-    private int cartId;
 }

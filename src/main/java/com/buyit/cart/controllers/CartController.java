@@ -1,5 +1,6 @@
 package com.buyit.cart.controllers;
 
+import com.buyit.auth.AuthService;
 import com.buyit.cart.DTOs.CartDTO;
 import com.buyit.cart.entities.CartEntity;
 import com.buyit.cart.services.CartService;
@@ -18,10 +19,13 @@ import org.springframework.web.bind.annotation.*;
 public class CartController {
 
     private final CartService cartService;
+    private final AuthService authService;
 
     @Autowired
-    public CartController(CartService cartService) {
+    public CartController(CartService cartService,
+                          AuthService authService) {
         this.cartService = cartService;
+        this.authService = authService;
     }
 
     @PostMapping("/addCart")
@@ -40,7 +44,7 @@ public class CartController {
                     @ApiResponse(description = "Internal error", responseCode = "500", content = @Content)
             }
     )
-    public CartEntity addNewCart(){
+    public CartEntity addNewCart() {
         return this.cartService.addNewCart();
     }
 
@@ -71,6 +75,34 @@ public class CartController {
         return cartService.getCartById(id);
     }
 
+    @GetMapping("/user/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    @Operation(
+            summary = "Gets products from an user's cart",
+            description = "Searches for a cart identified by the userId. It returns all the products from the specified cart",
+            tags = {"GetCartByID"},
+            parameters = {
+                    @Parameter(
+                            name = "id",
+                            description = "User ID. Primary key from dataBase",
+                            required = true
+                    ),
+            },
+            responses = {
+                    @ApiResponse(
+                            description = "OK",
+                            responseCode = "200",
+                            content = @Content(mediaType = "application/json", schema = @Schema(implementation = CartDTO.class))
+                    ),
+                    @ApiResponse(description = "Not found", responseCode = "404", content = @Content),
+                    @ApiResponse(description = "Internal error", responseCode = "500", content = @Content)
+            }
+    )
+    public CartDTO getCartByUsername(@RequestHeader("Authorization") String requestTokenHeader) {
+        String username = this.authService.getUsernameFromRequestTokenHeader(requestTokenHeader);
+        return cartService.getCartByUsername(username);
+    }
+
     @PostMapping("/addProduct")
     @ResponseStatus(HttpStatus.CREATED)
     @Operation(
@@ -87,8 +119,9 @@ public class CartController {
                     @ApiResponse(description = "Internal error", responseCode = "500", content = @Content)
             }
     )
-    public CartDTO addProductInCart(@RequestBody ItemToCartDTO itemToCartDTO) {
-        return cartService.addProductInCart(itemToCartDTO.getProductId(), itemToCartDTO.getCartId());
+    public CartDTO addProductInCart(@RequestHeader("Authorization") String requestTokenHeader, @RequestBody ItemToCartDTO itemToCartDTO) {
+        String username = this.authService.getUsernameFromRequestTokenHeader(requestTokenHeader);
+        return cartService.addProductInCart(itemToCartDTO.getProductId(), username);
     }
 
     @DeleteMapping("/removeProduct")
@@ -107,7 +140,8 @@ public class CartController {
                     @ApiResponse(description = "Internal error", responseCode = "500", content = @Content)
             }
     )
-    public CartDTO removeProductFromCart(@RequestBody ItemToCartDTO itemToCartDTO) {
-        return cartService.removeProductFromCart(itemToCartDTO.getProductId(), itemToCartDTO.getCartId());
+    public CartDTO removeProductFromCart(@RequestHeader("Authorization") String requestTokenHeader, @RequestBody ItemToCartDTO itemToCartDTO) {
+        String username = this.authService.getUsernameFromRequestTokenHeader(requestTokenHeader);
+        return cartService.removeProductFromCart(itemToCartDTO.getProductId(), username);
     }
 }

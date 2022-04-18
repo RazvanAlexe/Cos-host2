@@ -132,7 +132,7 @@ class CartServiceTest {
 
         CartDTO cartDTOExpected = new CartDTO(cartItemDTOListExpected, 20);
 
-        CartDTO cartDTOActual = this.cartService.addProductInCart(1, 1);
+        CartDTO cartDTOActual = this.cartService.addProductInCart(1, "usr1");
 
         assertEquals(cartDTOExpected, cartDTOActual);
     }
@@ -162,7 +162,7 @@ class CartServiceTest {
 
         CartDTO cartDTOExpected = new CartDTO(cartItemDTOListExpected, 10);
 
-        CartDTO cartDTOActual = this.cartService.removeProductFromCart(1, 1);
+        CartDTO cartDTOActual = this.cartService.removeProductFromCart(1, "usr1");
 
         assertEquals(cartDTOExpected, cartDTOActual);
     }
