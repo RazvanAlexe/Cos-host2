@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5cba1d4-db89-4aef-ae69-99da65f202bb" name="Changes" comment="&quot;Auth Completed&quot;">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/buyit/DemoApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buyit/DemoApplication.class" afterDir="false" />
-    </list>
+    <list default="true" id="d5cba1d4-db89-4aef-ae69-99da65f202bb" name="Changes" comment="&quot;Auth Completed&quot;" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -183,7 +177,7 @@
       <workItem from="1649341581297" duration="1198000" />
       <workItem from="1649416127892" duration="861000" />
       <workItem from="1649419575399" duration="2000" />
-      <workItem from="1650375924427" duration="581000" />
+      <workItem from="1650375924427" duration="1266000" />
     </task>
     <task id="LOCAL-00001" summary="&quot;Auth Completed&quot;">
       <created>1650366742247</created>
