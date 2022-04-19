@@ -1,5 +1,6 @@
 package com.buyit.auth;
 
+import io.jsonwebtoken.ExpiredJwtException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
