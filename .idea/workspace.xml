@@ -4,13 +4,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5cba1d4-db89-4aef-ae69-99da65f202bb" name="Changes" comment="&quot;Auth Completed&quot;">
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+    <list default="true" id="d5cba1d4-db89-4aef-ae69-99da65f202bb" name="Changes" comment="&quot;Iterator design pattern added&quot;">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/buyit/cart/iterator/Iterator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/buyit/cart/DTOs/CartDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/buyit/cart/DTOs/CartDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/buyit/cart/DTOs/ItemToCartDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/buyit/cart/DTOs/ItemToCartDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/buyit/cart/controllers/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/buyit/cart/controllers/CartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/buyit/cart/entities/CartEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/buyit/cart/entities/CartEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/buyit/cart/services/CartService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/buyit/cart/services/CartService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/buyit/orders/repositories/repositories/CartRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/buyit/cart/repositories/CartRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/buyit/cart/repositories/CartRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/buyit/cart/repositories/CartRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/buyit/cart/services/CartServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/buyit/cart/services/CartServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -55,23 +75,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RequestMappingsPanelOrder0" value="0" />
-    <property name="RequestMappingsPanelOrder1" value="1" />
-    <property name="RequestMappingsPanelWidth0" value="75" />
-    <property name="RequestMappingsPanelWidth1" value="75" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "settings.editor.selected.configurable": "editor.preferences.completion"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Tudor\Desktop\IP\BuyIt\HostedGitRepo\Cos-Host\src\main\java\com\buyit" />
@@ -80,7 +91,7 @@
       <recent name="com.buyit.auth" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.DemoApplication (1)">
+  <component name="RunManager" selected="Spring Boot.DemoApplication (2)">
     <configuration name="DemoApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.buyit.DemoApplication" />
       <module name="Cos-Host" />
@@ -149,6 +160,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="DemoApplication (2)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="Cos-host2" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.buyit.DemoApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="demo" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.buyit.DemoApplication" />
@@ -180,6 +198,7 @@
       <workItem from="1649416127892" duration="861000" />
       <workItem from="1649419575399" duration="2000" />
       <workItem from="1650375924427" duration="1286000" />
+      <workItem from="1651136758573" duration="4386000" />
     </task>
     <task id="LOCAL-00001" summary="&quot;Auth Completed&quot;">
       <created>1650366742247</created>
@@ -207,7 +226,12 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="&quot;Auth Completed&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;Auth Completed&quot;" />
+    <MESSAGE value="&quot;Iterator design pattern added&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;Iterator design pattern added&quot;" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Cos_Host$DemoApplication.ic" NAME="DemoApplication Coverage Results" MODIFIED="1650365789144" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

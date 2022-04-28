@@ -7,9 +7,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="demo" />
         <module name="Cos-Host2" />
         <module name="Cos-Host" />
+        <module name="Cos-host2" />
+        <module name="demo" />
       </profile>
     </annotationProcessing>
   </component>
@@ -17,6 +18,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Cos-Host" options="-parameters" />
       <module name="Cos-Host2" options="-parameters" />
+      <module name="Cos-host2" options="-parameters" />
       <module name="demo" options="-parameters" />
     </option>
   </component>

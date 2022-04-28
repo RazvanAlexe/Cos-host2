@@ -1,7 +1,6 @@
 package com.buyit.cart.repositories;
 
 import com.buyit.cart.entities.CartEntity;
-import com.buyit.orders.repositories.repositories.CartRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;

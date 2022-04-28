@@ -4,7 +4,7 @@ import com.buyit.cart.DTOs.CartDTO;
 import com.buyit.cart.entities.CartEntity;
 import com.buyit.customer.entities.CustomerEntity;
 import com.buyit.customer.repositories.CustomerRepository;
-import com.buyit.orders.repositories.repositories.CartRepository;
+import com.buyit.cart.repositories.CartRepository;
 import com.buyit.cartItem.entities.CartItemEntity;
 import com.buyit.cartItem.DTOs.CartItemDTO;
 import com.buyit.cartItem.repositories.CartItemRepository;
