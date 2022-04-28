@@ -4,11 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5cba1d4-db89-4aef-ae69-99da65f202bb" name="Changes" comment="&quot;Iterator design pattern added&quot;">
+    <list default="true" id="d5cba1d4-db89-4aef-ae69-99da65f202bb" name="Changes" comment="&quot;Composite and Prototype design patterns added&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/buyit/cart/DTOs/CartDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/buyit/cart/DTOs/CartDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/buyit/cart/iterator/Iterator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/buyit/cart/design/patterns/Iterator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/buyit/cart/repositories/CartRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/buyit/cart/repositories/CartRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/buyit/cartItem/DTOs/CartItemDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/buyit/cartItem/DTOs/CartItemDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/buyit/cart/services/CartServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/buyit/cart/services/CartServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/buyit/cart/DTOs/CartDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buyit/cart/DTOs/CartDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/buyit/cart/services/CartService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buyit/cart/services/CartService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/buyit/cartItem/DTOs/CartItemDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buyit/cartItem/DTOs/CartItemDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/buyit/orders/repositories/repositories/CartRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/buyit/cart/repositories/CartRepositoryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/buyit/cart/repositories/CartRepositoryTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/buyit/cart/services/CartServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/buyit/cart/services/CartServiceTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,14 +74,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "settings.editor.selected.configurable": "editor.preferences.completion"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.completion&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;f356e1a061eba7eb2fad414841fcdb5b&quot;
   }
-}]]></component>
+}</component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Tudor\Desktop\IP\BuyIt\HostedGitRepo\Cos-Host\src\main\java\com\buyit" />
@@ -82,63 +98,83 @@
       <recent name="com.buyit.auth" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.DemoApplication (2)">
-    <configuration name="DemoApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.buyit.DemoApplication" />
-      <module name="Cos-Host" />
+  <component name="RunManager" selected="JUnit.CartServiceTest.addNewCartInvalidTest">
+    <configuration name="CartServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Cos-host2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.buyit.*" />
+          <option name="PATTERN" value="com.buyit.cart.services.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="com.buyit.cart.services" />
+      <option name="MAIN_CLASS_NAME" value="com.buyit.cart.services.CartServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CartControllerTest.addNewCartValidTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="demo" />
+    <configuration name="CartServiceTest.addNewCartInvalidTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Cos-host2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.buyit.cart.controllers.*" />
+          <option name="PATTERN" value="com.buyit.cart.services.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.buyit.cart.controllers" />
-      <option name="MAIN_CLASS_NAME" value="com.buyit.cart.controllers.CartControllerTest" />
-      <option name="METHOD_NAME" value="addNewCartValidTest" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" value="18" />
+      <option name="PACKAGE_NAME" value="com.buyit.cart.services" />
+      <option name="MAIN_CLASS_NAME" value="com.buyit.cart.services.CartServiceTest" />
+      <option name="METHOD_NAME" value="addNewCartInvalidTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CartItemRepositoryTest.findByCartIdInvalidTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="demo" />
+    <configuration name="CartServiceTest.addProductInCartTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Cos-host2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.buyit.cartItem.repositories.*" />
+          <option name="PATTERN" value="com.buyit.cart.services.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.buyit.cartItem.repositories" />
-      <option name="MAIN_CLASS_NAME" value="com.buyit.cartItem.repositories.CartItemRepositoryTest" />
-      <option name="METHOD_NAME" value="findByCartIdInvalidTest" />
+      <option name="PACKAGE_NAME" value="com.buyit.cart.services" />
+      <option name="MAIN_CLASS_NAME" value="com.buyit.cart.services.CartServiceTest" />
+      <option name="METHOD_NAME" value="addProductInCartTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CartItemRepositoryTest.findByCartIdValidTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="demo" />
+    <configuration name="CartServiceTest.getCartByIdValidTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Cos-host2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.buyit.cartItem.repositories.*" />
+          <option name="PATTERN" value="com.buyit.cart.services.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.buyit.cartItem.repositories" />
-      <option name="MAIN_CLASS_NAME" value="com.buyit.cartItem.repositories.CartItemRepositoryTest" />
-      <option name="METHOD_NAME" value="findByCartIdValidTest" />
+      <option name="PACKAGE_NAME" value="com.buyit.cart.services" />
+      <option name="MAIN_CLASS_NAME" value="com.buyit.cart.services.CartServiceTest" />
+      <option name="METHOD_NAME" value="getCartByIdValidTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CartServiceTest.removeProductFromCartTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Cos-host2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.buyit.cart.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.buyit.cart.services" />
+      <option name="MAIN_CLASS_NAME" value="com.buyit.cart.services.CartServiceTest" />
+      <option name="METHOD_NAME" value="removeProductFromCartTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -167,10 +203,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.DemoApplication" />
-        <item itemvalue="JUnit.CartItemRepositoryTest.findByCartIdInvalidTest" />
-        <item itemvalue="JUnit.CartItemRepositoryTest.findByCartIdValidTest" />
-        <item itemvalue="JUnit.CartControllerTest.addNewCartValidTest" />
+        <item itemvalue="JUnit.CartServiceTest.addNewCartInvalidTest" />
+        <item itemvalue="JUnit.CartServiceTest" />
+        <item itemvalue="JUnit.CartServiceTest.getCartByIdValidTest" />
+        <item itemvalue="JUnit.CartServiceTest.addProductInCartTest" />
+        <item itemvalue="JUnit.CartServiceTest.removeProductFromCartTest" />
       </list>
     </recent_temporary>
   </component>
@@ -189,7 +226,9 @@
       <workItem from="1649416127892" duration="861000" />
       <workItem from="1649419575399" duration="2000" />
       <workItem from="1650375924427" duration="1286000" />
-      <workItem from="1651136758573" duration="6645000" />
+      <workItem from="1651136758573" duration="8177000" />
+      <workItem from="1651146785233" duration="1803000" />
+      <workItem from="1651149405901" duration="1463000" />
     </task>
     <task id="LOCAL-00001" summary="&quot;Auth Completed&quot;">
       <created>1650366742247</created>
@@ -205,7 +244,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651142946104</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="&quot;Composite and Prototype design patterns added&quot;">
+      <created>1651145261208</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1651145261208</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,7 +271,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="&quot;Auth Completed&quot;" />
     <MESSAGE value="&quot;Iterator design pattern added&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;Iterator design pattern added&quot;" />
+    <MESSAGE value="&quot;Composite and Prototype design patterns added&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;Composite and Prototype design patterns added&quot;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

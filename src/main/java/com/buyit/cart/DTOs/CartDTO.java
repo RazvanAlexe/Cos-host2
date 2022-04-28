@@ -17,12 +17,13 @@ public class CartDTO implements Iterator, Composite, Prototype {
 
     public CartDTO() {
         items = new ArrayList<>();
-        currIndex = 0;
+        currIndex = -1;
     }
 
     public CartDTO(List<CartItemDTO> items, double totalPrice) {
         this.items = items;
         this.totalPrice = totalPrice;
+        currIndex = -1;
     }
 
     @Override
@@ -42,7 +43,7 @@ public class CartDTO implements Iterator, Composite, Prototype {
 
     @Override
     public void reset() {
-        currIndex = 0;
+        currIndex = -1;
     }
 
     @Override
@@ -69,6 +70,10 @@ public class CartDTO implements Iterator, Composite, Prototype {
 
     @Override
     public Object clone() {
-        return new CartDTO(new ArrayList<>(items), totalPrice);
+        List<CartItemDTO> itemsClone = new ArrayList<>();
+        for(CartItemDTO item : items){
+            itemsClone.add(new CartItemDTO(item));
+        }
+        return new CartDTO(itemsClone, totalPrice);
     }
 }

@@ -13,6 +13,12 @@ public class CartItemDTO {
     private double price;
     private ProductEntity productEntity;
 
+    public CartItemDTO(CartItemDTO cart){
+        this.quantity = cart.quantity;
+        this.price = cart.price;
+        this.productEntity = cart.productEntity;
+    }
+
     public void operate() {
         quantity++;
         price = price / (quantity - 1) * quantity;

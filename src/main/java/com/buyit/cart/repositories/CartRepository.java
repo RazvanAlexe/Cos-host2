@@ -7,5 +7,4 @@ import java.util.List;
 
 public interface CartRepository extends CrudRepository<CartEntity, Integer> {
     List<CartEntity> findAll();
-
 }
