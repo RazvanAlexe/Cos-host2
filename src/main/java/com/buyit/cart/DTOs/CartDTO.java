@@ -1,15 +1,16 @@
 package com.buyit.cart.DTOs;
 
-import com.buyit.cart.iterator.Iterator;
+import com.buyit.cart.design.patterns.Composite;
+import com.buyit.cart.design.patterns.Iterator;
+import com.buyit.cart.design.patterns.Prototype;
 import com.buyit.cartItem.DTOs.CartItemDTO;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Data
-public class CartDTO implements Iterator {
+public class CartDTO implements Iterator, Composite, Prototype {
     private List<CartItemDTO> items;
     private double totalPrice;
     private int currIndex;
@@ -42,5 +43,32 @@ public class CartDTO implements Iterator {
     @Override
     public void reset() {
         currIndex = 0;
+    }
+
+    @Override
+    public void operate() {
+        for(CartItemDTO item : items){
+            item.operate();
+        }
+    }
+
+    @Override
+    public void add(Object obj) {
+        items.add((CartItemDTO) obj);
+    }
+
+    @Override
+    public void remove(Object obj) {
+        items.remove((CartItemDTO) obj);
+    }
+
+    @Override
+    public Object getChild(int index) {
+        return items.get(index);
+    }
+
+    @Override
+    public Object clone() {
+        return new CartDTO(new ArrayList<>(items), totalPrice);
     }
 }

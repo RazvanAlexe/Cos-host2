@@ -12,4 +12,9 @@ public class CartItemDTO {
     private int quantity;
     private double price;
     private ProductEntity productEntity;
+
+    public void operate() {
+        quantity++;
+        price = price / (quantity - 1) * quantity;
+    }
 }

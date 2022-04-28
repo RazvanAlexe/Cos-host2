@@ -1,4 +1,4 @@
-package com.buyit.cart.iterator;
+package com.buyit.cart.design.patterns;
 
 public interface Iterator {
     public boolean hasNext();

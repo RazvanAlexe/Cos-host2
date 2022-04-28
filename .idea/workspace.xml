@@ -5,19 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d5cba1d4-db89-4aef-ae69-99da65f202bb" name="Changes" comment="&quot;Iterator design pattern added&quot;">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/buyit/cart/iterator/Iterator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/buyit/cart/DTOs/CartDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/buyit/cart/DTOs/CartDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/buyit/cart/DTOs/ItemToCartDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/buyit/cart/DTOs/ItemToCartDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/buyit/cart/controllers/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/buyit/cart/controllers/CartController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/buyit/cart/entities/CartEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/buyit/cart/entities/CartEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/buyit/cart/services/CartService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/buyit/cart/services/CartService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/buyit/orders/repositories/repositories/CartRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/buyit/cart/repositories/CartRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/buyit/cart/repositories/CartRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/buyit/cart/repositories/CartRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/buyit/cart/services/CartServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/buyit/cart/services/CartServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/buyit/cart/iterator/Iterator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/buyit/cart/design/patterns/Iterator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/buyit/cartItem/DTOs/CartItemDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/buyit/cartItem/DTOs/CartItemDTO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,8 +18,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -198,7 +189,7 @@
       <workItem from="1649416127892" duration="861000" />
       <workItem from="1649419575399" duration="2000" />
       <workItem from="1650375924427" duration="1286000" />
-      <workItem from="1651136758573" duration="4386000" />
+      <workItem from="1651136758573" duration="6645000" />
     </task>
     <task id="LOCAL-00001" summary="&quot;Auth Completed&quot;">
       <created>1650366742247</created>
@@ -207,7 +198,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650366742247</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="&quot;Iterator design pattern added&quot;">
+      <created>1651142946104</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1651142946104</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
