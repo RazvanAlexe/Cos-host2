@@ -6,39 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d5cba1d4-db89-4aef-ae69-99da65f202bb" name="Changes" comment="&quot;XML and .proprieties modified&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/buyit/DemoApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buyit/DemoApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/buyit/billing/address/DTOs/BillingAddressDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buyit/billing/address/DTOs/BillingAddressDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/buyit/billing/address/entities/BillingAddressEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buyit/billing/address/entities/BillingAddressEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/buyit/billing/address/repositories/BillingAddressRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buyit/billing/address/repositories/BillingAddressRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/buyit/cart/DTOs/CartDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buyit/cart/DTOs/CartDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/buyit/cart/DTOs/ItemToCartDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buyit/cart/DTOs/ItemToCartDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/buyit/cart/controllers/CartController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buyit/cart/controllers/CartController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/buyit/cart/entities/CartEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buyit/cart/entities/CartEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/buyit/cart/services/CartService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buyit/cart/services/CartService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/buyit/cartItem/DTOs/CartItemDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buyit/cartItem/DTOs/CartItemDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/buyit/cartItem/entities/CartItemEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buyit/cartItem/entities/CartItemEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/buyit/cartItem/repositories/CartItemRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buyit/cartItem/repositories/CartItemRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/buyit/customer/DTOs/CustomerDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buyit/customer/DTOs/CustomerDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/buyit/customer/entities/CustomerEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buyit/customer/entities/CustomerEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/buyit/customer/repositories/CustomerRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buyit/customer/repositories/CustomerRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/buyit/orders/DTOs/CreateOrderDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buyit/orders/DTOs/CreateOrderDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/buyit/orders/DTOs/OrderDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buyit/orders/DTOs/OrderDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/buyit/orders/controllers/OrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buyit/orders/controllers/OrderController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/buyit/orders/entities/OrderEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buyit/orders/entities/OrderEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/buyit/orders/repositories/OrderRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buyit/orders/repositories/OrderRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/buyit/orders/services/OrderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buyit/orders/services/OrderService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/buyit/product/entities/ProductEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buyit/product/entities/ProductEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/buyit/product/repositories/ProductRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buyit/product/repositories/ProductRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/buyit/shipping/address/DTOs/ShippingAddressDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buyit/shipping/address/DTOs/ShippingAddressDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/buyit/shipping/address/entities/ShippingAddressEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buyit/shipping/address/entities/ShippingAddressEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/buyit/shipping/address/repositories/ShippingAddressRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buyit/shipping/address/repositories/ShippingAddressRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/buyit/DemoApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/buyit/DemoApplicationTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/buyit/cart/controllers/CartControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/buyit/cart/controllers/CartControllerTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/buyit/cart/repositories/CartRepositoryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/buyit/cart/repositories/CartRepositoryTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/buyit/cart/services/CartServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/buyit/cart/services/CartServiceTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/buyit/cartItem/repositories/CartItemRepositoryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/buyit/cartItem/repositories/CartItemRepositoryTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,19 +64,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RequestMappingsPanelOrder0" value="0" />
-    <property name="RequestMappingsPanelOrder1" value="1" />
-    <property name="RequestMappingsPanelWidth0" value="75" />
-    <property name="RequestMappingsPanelWidth1" value="75" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs_package_manager_path" value="npm" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "WebServerToolWindowFactoryState": "false"
+  }
+}]]></component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -209,7 +173,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DemoApplication (2)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <configuration name="DemoApplication (2)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true">
       <module name="Cos-host2" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.buyit.DemoApplication" />
       <method v="2">
@@ -232,11 +196,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.DemoApplication (2)" />
         <item itemvalue="JUnit.CartServiceTest.addNewCartInvalidTest" />
         <item itemvalue="JUnit.CartServiceTest" />
         <item itemvalue="JUnit.CartServiceTest.getCartByIdValidTest" />
         <item itemvalue="JUnit.CartServiceTest.addProductInCartTest" />
-        <item itemvalue="JUnit.CartServiceTest.removeProductFromCartTest" />
       </list>
     </recent_temporary>
   </component>
@@ -265,6 +229,7 @@
       <workItem from="1651584040374" duration="1006000" />
       <workItem from="1651933130841" duration="1098000" />
       <workItem from="1651934449709" duration="3592000" />
+      <workItem from="1651954971563" duration="357000" />
     </task>
     <task id="LOCAL-00001" summary="&quot;Auth Completed&quot;">
       <created>1650366742247</created>
