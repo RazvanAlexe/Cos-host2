@@ -13,6 +13,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @RestController
@@ -20,6 +21,8 @@ import java.util.List;
 public class OrderController {
     private final OrderService orderService;
     private final AuthService authService;
+    @Autowired
+    private HttpServletRequest request;
 
     @Autowired
     public OrderController(OrderService orderService,
@@ -43,12 +46,13 @@ public class OrderController {
                     @ApiResponse(description = "Internal error", responseCode = "500", content = @Content)
             }
     )
-    public OrderEntity makeNewOrder(@RequestHeader("Authorization") String requestTokenHeader, @RequestBody CreateOrderDTO createOrderDTO) {
-        String username = this.authService.getUsernameFromRequestTokenHeader(requestTokenHeader);
+    public OrderEntity makeNewOrder(@RequestBody CreateOrderDTO createOrderDTO) {
+        String username = authService.getUsernameFromRequestTokenHeader(request.getHeader("Authorization"));
+        System.out.println(username);
         return this.orderService.makeNewOrder(username, createOrderDTO);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("")
     @Operation(
             summary = "Gets the order identified by an id",
             description = "Searches for a order identified by the id param. It returns the requested order",
@@ -70,8 +74,9 @@ public class OrderController {
                     @ApiResponse(description = "Internal error", responseCode = "500", content = @Content)
             }
     )
-    public List<OrderDTO> getOrdersByUsername(@RequestHeader("Authorization") String requestTokenHeader) {
-        String username = this.authService.getUsernameFromRequestTokenHeader(requestTokenHeader);
+    public List<OrderDTO> getOrdersByUsername() {
+        String username = authService.getUsernameFromRequestTokenHeader(request.getHeader("Authorization"));
+        System.out.println(username);
         return this.orderService.getOrdersByUsername(username);
     }
 }

@@ -6,20 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="d5cba1d4-db89-4aef-ae69-99da65f202bb" name="Changes" comment="&quot;XML and .proprieties modified&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/buyit/auth/JwtTokenUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/buyit/auth/JwtTokenUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/buyit/billing/address/entities/BillingAddressEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/buyit/billing/address/entities/BillingAddressEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/buyit/cart/DTOs/ItemToCartDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/buyit/cart/DTOs/ItemToCartDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/buyit/cart/controllers/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/buyit/cart/controllers/CartController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/buyit/cart/entities/CartEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/buyit/cart/entities/CartEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/buyit/cart/services/CartService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/buyit/cart/services/CartService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/buyit/customer/entities/CustomerEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/buyit/customer/entities/CustomerEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/buyit/orders/entities/OrderEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/buyit/orders/entities/OrderEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/buyit/product/entities/ProductEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/buyit/product/entities/ProductEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/buyit/shipping/address/entities/ShippingAddressEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/buyit/shipping/address/entities/ShippingAddressEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/buyit/orders/controllers/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/buyit/orders/controllers/OrderController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/buyit/cart/controllers/CartController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buyit/cart/controllers/CartController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/buyit/cart/services/CartService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buyit/cart/services/CartService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/buyit/orders/controllers/OrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buyit/orders/controllers/OrderController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,16 +66,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "WebServerToolWindowFactoryState": "false",
-    "spring.configuration.checksum": "f356e1a061eba7eb2fad414841fcdb5b"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;f356e1a061eba7eb2fad414841fcdb5b&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -250,6 +239,8 @@
       <workItem from="1652006831594" duration="891000" />
       <workItem from="1652015202471" duration="1872000" />
       <workItem from="1652108507367" duration="2238000" />
+      <workItem from="1652127644075" duration="283000" />
+      <workItem from="1652127965412" duration="998000" />
     </task>
     <task id="LOCAL-00001" summary="&quot;Auth Completed&quot;">
       <created>1650366742247</created>
