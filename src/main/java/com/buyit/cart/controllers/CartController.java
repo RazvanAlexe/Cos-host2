@@ -14,12 +14,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+
 @RestController
 @RequestMapping(path = "/cart")
 public class CartController {
 
     private final CartService cartService;
     private final AuthService authService;
+    @Autowired
+    private HttpServletRequest request;
 
     @Autowired
     public CartController(CartService cartService,
@@ -27,8 +31,7 @@ public class CartController {
         this.cartService = cartService;
         this.authService = authService;
     }
-
-    @PostMapping("/addCart")
+    @PostMapping("/addUserCart")
     @ResponseStatus(HttpStatus.CREATED)
     @Operation(
             summary = "Adds new cart",
@@ -44,8 +47,10 @@ public class CartController {
                     @ApiResponse(description = "Internal error", responseCode = "500", content = @Content)
             }
     )
-    public CartEntity addNewCart() {
-        return this.cartService.addNewCart();
+    public CartEntity addNewUserCart() {
+        String username = authService.getUsernameFromRequestTokenHeader(request.getHeader("Authorization"));
+        System.out.println(username);
+        return this.cartService.addNewUserCart(username);
     }
 
     @GetMapping("/{id}")
@@ -75,7 +80,7 @@ public class CartController {
         return cartService.getCartById(id);
     }
 
-    @GetMapping("/user/{id}")
+    @GetMapping("/mine")
     @ResponseStatus(HttpStatus.OK)
     @Operation(
             summary = "Gets products from an user's cart",
@@ -98,8 +103,9 @@ public class CartController {
                     @ApiResponse(description = "Internal error", responseCode = "500", content = @Content)
             }
     )
-    public CartDTO getCartByUsername(@RequestHeader("Authorization") String requestTokenHeader) {
-        String username = this.authService.getUsernameFromRequestTokenHeader(requestTokenHeader);
+    public CartDTO getMyCart() {
+        String username = authService.getUsernameFromRequestTokenHeader(request.getHeader("Authorization"));
+        System.out.println(username);
         return cartService.getCartByUsername(username);
     }
 
@@ -119,8 +125,9 @@ public class CartController {
                     @ApiResponse(description = "Internal error", responseCode = "500", content = @Content)
             }
     )
-    public CartDTO addProductInCart(@RequestHeader("Authorization") String requestTokenHeader, @RequestBody ItemToCartDTO itemToCartDTO) {
-        String username = this.authService.getUsernameFromRequestTokenHeader(requestTokenHeader);
+    public CartDTO addProductInCart(@RequestBody ItemToCartDTO itemToCartDTO) {
+        String username = authService.getUsernameFromRequestTokenHeader(request.getHeader("Authorization"));
+        System.out.println(username);
         return cartService.addProductInCart(itemToCartDTO.getProductId(), username);
     }
 
@@ -140,8 +147,10 @@ public class CartController {
                     @ApiResponse(description = "Internal error", responseCode = "500", content = @Content)
             }
     )
-    public CartDTO removeProductFromCart(@RequestHeader("Authorization") String requestTokenHeader, @RequestBody ItemToCartDTO itemToCartDTO) {
-        String username = this.authService.getUsernameFromRequestTokenHeader(requestTokenHeader);
+    public CartDTO removeProductFromCart(@RequestBody ItemToCartDTO itemToCartDTO) {
+        String username = authService.getUsernameFromRequestTokenHeader(request.getHeader("Authorization"));
+        System.out.println(username);
+        System.out.println(itemToCartDTO);
         return cartService.removeProductFromCart(itemToCartDTO.getProductId(), username);
     }
 }

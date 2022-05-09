@@ -159,4 +159,18 @@ public class CartService {
         cartEntity.setTotalPrice(0);
         return this.cartRepository.save(cartEntity);
     }
+
+    public CartEntity addNewUserCart(String username) {
+        CartEntity cartEntity = addNewCart();
+        System.out.println(cartEntity);
+        System.out.println("inainte de tot");
+        CustomerEntity customerEntity = customerRepository.findByUsername(username);
+
+        System.out.println("dupa find");
+        System.out.println("inainte"+cartEntity.getId());
+        customerEntity.setCartId(cartEntity.getId());
+        System.out.println("dupa" + customerEntity.getCartId());
+        customerRepository.save(customerEntity);
+        return cartEntity;
+    }
 }

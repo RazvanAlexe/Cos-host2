@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Data
 public class BillingAddressEntity {
     @Id
-    private int id;
+    private Integer id;
     private String city;
     private String address;
 }
