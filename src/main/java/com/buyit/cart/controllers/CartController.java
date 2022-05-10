@@ -32,6 +32,7 @@ public class CartController {
         this.authService = authService;
     }
     @PostMapping("/addUserCart")
+    @CrossOrigin
     @ResponseStatus(HttpStatus.CREATED)
     @Operation(
             summary = "Adds new cart",
@@ -54,6 +55,7 @@ public class CartController {
     }
 
     @GetMapping("/{id}")
+    @CrossOrigin
     @ResponseStatus(HttpStatus.OK)
     @Operation(
             summary = "Gets products from a cart identified by an id",
@@ -81,6 +83,7 @@ public class CartController {
     }
 
     @GetMapping("/mine")
+    @CrossOrigin
     @ResponseStatus(HttpStatus.OK)
     @Operation(
             summary = "Gets products from an user's cart",
@@ -110,6 +113,7 @@ public class CartController {
     }
 
     @PostMapping("/addProduct")
+    @CrossOrigin
     @ResponseStatus(HttpStatus.CREATED)
     @Operation(
             summary = "Adds a product to cart",
@@ -132,6 +136,7 @@ public class CartController {
     }
 
     @DeleteMapping("/removeProduct")
+    @CrossOrigin
     @ResponseStatus(HttpStatus.GONE)
     @Operation(
             summary = "Removes a product from the cart",

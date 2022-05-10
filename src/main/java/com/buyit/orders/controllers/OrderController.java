@@ -32,6 +32,7 @@ public class OrderController {
     }
 
     @PostMapping("")
+    @CrossOrigin
     @Operation(
             summary = "Make a new order",
             description = "Creates a new order and adds it to the list of orders ",
@@ -53,6 +54,7 @@ public class OrderController {
     }
 
     @GetMapping("")
+    @CrossOrigin
     @Operation(
             summary = "Gets the order identified by an id",
             description = "Searches for a order identified by the id param. It returns the requested order",
