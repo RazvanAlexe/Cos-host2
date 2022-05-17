@@ -19,6 +19,7 @@ public class CheckoutController {
 
 
     @PostMapping("cart/payment/checkout")
+    @CrossOrigin
     @Operation(
             summary = "Checkout page",
             description = "Show the payment result",
