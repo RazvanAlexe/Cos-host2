@@ -25,6 +25,7 @@ public class ChargeController {
     }
 
     @PostMapping("cart/payment/charge")
+    @CrossOrigin
     @Operation(
             summary = "Payment charge",
             description = "Will make a charge request and returns the result of the payment into a new view",
