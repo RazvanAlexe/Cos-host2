@@ -112,17 +112,17 @@ public class CartController {
         return cartService.getCartByUsername(username);
     }
 
-    @PostMapping("/addProduct")
+    @PatchMapping("/addProduct")
     @CrossOrigin
-    @ResponseStatus(HttpStatus.CREATED)
+    @ResponseStatus(HttpStatus.OK)
     @Operation(
             summary = "Adds a product to cart",
             description = "The product will be added to the cart if the product isn't already in the cart. Otherwise, the quantity of the product from the cart will be increased by one.",
             tags = {"AddProduct"},
             responses = {
                     @ApiResponse(
-                            description = "Created",
-                            responseCode = "201",
+                            description = "Updated",
+                            responseCode = "200",
                             content = @Content(mediaType = "application/json", schema = @Schema(implementation = ItemToCartDTO.class))
                     ),
                     @ApiResponse(description = "Not found", responseCode = "404", content = @Content),
@@ -135,17 +135,17 @@ public class CartController {
         return cartService.addProductInCart(itemToCartDTO.getProductId(), username);
     }
 
-    @DeleteMapping("/removeProduct")
+    @PatchMapping("/removeProduct")
     @CrossOrigin
-    @ResponseStatus(HttpStatus.GONE)
+    @ResponseStatus(HttpStatus.OK)
     @Operation(
             summary = "Removes a product from the cart",
             description = "The product will be deleted from the cart if the quantity of the product from the cart is 1. Otherwise, the quantity of the product will be decremented by one.",
             tags = {"RemoveProduct"},
             responses = {
                     @ApiResponse(
-                            description = "Gone",
-                            responseCode = "410",
+                            description = "Updated",
+                            responseCode = "200",
                             content = @Content(mediaType = "application/json", schema = @Schema(implementation = ItemToCartDTO.class))
                     ),
                     @ApiResponse(description = "Not found", responseCode = "404", content = @Content),
