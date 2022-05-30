@@ -13,5 +13,5 @@ public class ShippingAddressEntity {
     @Id
     private Integer id;
     private String city;
-    private String Address;
+    private String address;
 }

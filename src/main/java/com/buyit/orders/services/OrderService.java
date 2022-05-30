@@ -64,6 +64,7 @@ public class OrderService {
         orderEntity.setShippingAddressId(createOrderDTO.getShippingAddressId());
         orderEntity.setBillingAddressId(createOrderDTO.getBillingAddressId());
 
+        cartService.addNewUserCart(username);
         return this.orderRepository.save(orderEntity);
     }
 

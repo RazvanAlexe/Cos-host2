@@ -31,6 +31,7 @@ public class CartController {
         this.cartService = cartService;
         this.authService = authService;
     }
+
     @PostMapping("/addUserCart")
     @CrossOrigin
     @ResponseStatus(HttpStatus.CREATED)
@@ -54,34 +55,6 @@ public class CartController {
         return this.cartService.addNewUserCart(username);
     }
 
-    @GetMapping("/{id}")
-    @CrossOrigin
-    @ResponseStatus(HttpStatus.OK)
-    @Operation(
-            summary = "Gets products from a cart identified by an id",
-            description = "Searches for a cart identified by the id param. It returns all the products from the specified cart",
-            tags = {"GetCartByID"},
-            parameters = {
-                    @Parameter(
-                            name = "id",
-                            description = "Cart ID. Primary key from dataBase",
-                            required = true
-                    ),
-            },
-            responses = {
-                    @ApiResponse(
-                            description = "OK",
-                            responseCode = "200",
-                            content = @Content(mediaType = "application/json", schema = @Schema(implementation = CartDTO.class))
-                    ),
-                    @ApiResponse(description = "Not found", responseCode = "404", content = @Content),
-                    @ApiResponse(description = "Internal error", responseCode = "500", content = @Content)
-            }
-    )
-    public CartDTO getCartById(@PathVariable int id) {
-        return cartService.getCartById(id);
-    }
-
     @GetMapping("/mine")
     @CrossOrigin
     @ResponseStatus(HttpStatus.OK)
@@ -89,13 +62,6 @@ public class CartController {
             summary = "Gets products from an user's cart",
             description = "Searches for a cart identified by the userId. It returns all the products from the specified cart",
             tags = {"GetCartByID"},
-            parameters = {
-                    @Parameter(
-                            name = "id",
-                            description = "User ID. Primary key from dataBase",
-                            required = true
-                    ),
-            },
             responses = {
                     @ApiResponse(
                             description = "OK",

@@ -58,14 +58,7 @@ public class OrderController {
     @Operation(
             summary = "Gets the order identified by an id",
             description = "Searches for a order identified by the id param. It returns the requested order",
-            tags = {"GetOrderByID"},
-            parameters = {
-                    @Parameter(
-                            name = "id",
-                            description = "Order ID. Primary key from dataBase",
-                            required = true
-                    ),
-            },
+            tags = {"GetMyOrders"},
             responses = {
                     @ApiResponse(
                             description = "OK",

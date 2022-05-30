@@ -99,7 +99,8 @@ public class CartService {
         if (!itemExists) {
             CartItemEntity itemEntity = new CartItemEntity();
 
-            int size = itemEntities.size();
+            List<CartItemEntity> allItems = cartItemRepository.findAll();
+            int size = allItems.size();
             itemEntity.setId(size + 1);
 
             double price = productRepository.findById(productId).get().getPrice();
@@ -162,14 +163,8 @@ public class CartService {
 
     public CartEntity addNewUserCart(String username) {
         CartEntity cartEntity = addNewCart();
-        System.out.println(cartEntity);
-        System.out.println("inainte de tot");
         CustomerEntity customerEntity = customerRepository.findByUsername(username);
-
-        System.out.println("dupa find");
-        System.out.println("inainte"+cartEntity.getId());
         customerEntity.setCartId(cartEntity.getId());
-        System.out.println("dupa" + customerEntity.getCartId());
         customerRepository.save(customerEntity);
         return cartEntity;
     }
